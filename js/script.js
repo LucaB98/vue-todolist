@@ -9,6 +9,7 @@ const app = createApp({
                 { id: 4, done: false, text: 'Aggiornare il PC' }
               ],
             newTaskText: '',
+            searchText: '',
         }
     },
     methods:{
