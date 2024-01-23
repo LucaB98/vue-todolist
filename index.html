@@ -58,7 +58,7 @@
                     </div>
                 </li>
             </ul>
-            <h3 v-show="!tasks.length">Non ci sono task</h3>
+            <h3 v-show="!filteredTasks.length">Non ci sono task <span v-if="searchText">contenenti "<br>{{searchText }}"</span></h3>
           </div>
     </div>
     <!-- js bootstrap -->

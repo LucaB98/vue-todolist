@@ -13,7 +13,7 @@ const app = createApp({
         }
     },
     computed:{
-        filteredTask(){
+        filteredTasks(){
             const searchTerm = this.searchText.toLowerCase();
 
             return this.tasks.filter(task => task.text.toLowerCase().includes(searchTerm));
