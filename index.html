@@ -42,13 +42,13 @@
                 </form>
             </nav>
             <ul class="list-group mt-3">
-                <li v-for="task in tasks" class="list-group-item d-flex justify-content-between"><span :class="'text-decoration-line-through'">{{task.text}}</span>
+                <li v-for="task in tasks" class="list-group-item d-flex justify-content-between"><span role="button" :class="{'text-decoration-line-through': task.done === true }">{{task.text}}</span>
                     <button type="button" class="btn-close" @click="deleteTask(task.id)"></button>
                 </li>
                 <li class="list-group-item">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        <input type="text" class="form-control" placeholder="Aggiungi una nuova task" v-model.trim ="newTaskText" @keyup.enter="addTask">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="addTask"><i class="fa-solid fa-plus"></i></button>
                     </div>
                 </li>
             </ul>
