@@ -12,6 +12,15 @@ const app = createApp({
             searchText: '',
         }
     },
+    computed:{
+        filteredTask(){
+            const searchTerm = this.searchText.toLowerCase();
+
+            return this.tasks.filter(task => task.text.toLowerCase().includes(searchTerm));
+            },
+          
+        
+    },
     methods:{
         deleteTask(id){
             this.tasks = this.tasks.filter(task => id !== task.id)

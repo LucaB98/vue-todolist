@@ -36,13 +36,13 @@
             <nav class="navbar bg-body-tertiary">
                 <form class="container-fluid">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Cerca..." >
+                    <input type="text" class="form-control" placeholder="Cerca..." v-model.trim="searchText">
                     <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
                   </div>
                 </form>
             </nav>
             <ul class="list-group mt-3">
-                <li v-for="task in tasks" class="list-group-item d-flex justify-content-between">
+                <li v-for="task in filteredTasks" class="list-group-item d-flex justify-content-between">
                     <div class="form-check">
                         <label class="form-check-label" :class="{'text-decoration-line-through': task.done}">
                             <input class="form-check-input" type="checkbox" v-model="task.done">
